@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>商品溯源系统</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+    <style>
+        #d4
+        {
+            width: 215px;
+            margin:0 auto;
+            margin-top: 250px;
+            font-size: 20px;
+            text-align:center;
+        }
+        #d1
+        {
+            margin-right: 60px;
+        }
+        input {
+            display: block;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+        textarea {
+            display: block;
+            margin-bottom: 12px;
+            opacity: 0.85;
+        }
+        body {
+            background-image:url(http://t1.aixinxi.net/o_1d1dfukh71plu2eg1s9e2hbdiua.jpg-w.jpg);
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:100% 100%;
+        }
+        .horizontal{
+            width: 215px;
+            margin:0 auto;
+            margin-top: 250px;
+            font-size: 20px;
+            text-align:center;
+            display: flex;
+            justify-content:center;
+        }
+    </style>
+<body>
+    <p style="color: aliceblue">
+        账号： <strong id="owner"></strong> 
+    </p>
+    <script>
+        const data = window.localStorage.getItem("data"); 
+        document.getElementById("owner").innerHTML = data;
+    </script>
+    
+    <div class="horizontal">
+        <div id="d1">
+            <input type="text" id="goodId" placeholder="商品ID" required="required"/>
+            <input type="text" id="goodName" placeholder="商品名" required="required"/>
+            <input type="text" id="goodComponents" placeholder="零件号 e.g. 零件1/零件2" required="required"/>
+            <button class="btn btn-primary btn-large btn-block" id="produce" onclick="App.produce()">生产</button>
+        </div>
+        <div id="d1">
+            <input type="text" id="saleId" placeholder="交易号" required="required"/>
+            <input type="text" id="goodId2" placeholder="商品ID" required="required"/>
+            <input type="text" id="buyer" placeholder="买家" required="required"/>
+            <div style="font-size: 14px">
+                <label style="color: aliceblue">买家类别&nbsp;&nbsp;&nbsp;&nbsp;</label>  
+                <select name="selector" id="selector" required="required"> 
+                    <option value="0">消费者</option> 
+                    <option value="1">生产商</option> 
+                    <option value="2">经销商</option>
+                    <option value="3">零售商</option>
+                </select></br> 
+            </div>
+            <input type="number" id="price" placeholder="价格" required="required"/>
+
+            <button class="btn btn-primary btn-large btn-block" id="produce" onclick="App.sell(1)">出售</button>
+        </div>
+    </div>
+    
+
+    <script src="index.js"></script>
+  </body>
+</html>

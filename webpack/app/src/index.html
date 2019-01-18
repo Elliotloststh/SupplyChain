@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>商品溯源系统</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+    <style>
+        #d4
+        {
+            width: 215px;
+            margin:0 auto;
+            margin-top: 230px;
+            font-size: 20px;
+            text-align:center;
+        }
+        input {
+            display: block;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+        body {
+            background-image:url(http://t1.aixinxi.net/o_1d1dfukh71plu2eg1s9e2hbdiua.jpg-w.jpg);
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:100% 100%;
+        }
+    </style>
+<body>  
+    <div id="d4">
+        <label style="color: rgb(202, 200, 162); font-size: 50px; font-family:fantasy">ZigZag</label><br><br>
+        <input type="text" id="account1" placeholder="账号" required="required"/>
+        <input type="password" id="password1" placeholder="密码" required="required"/>
+        <div style="font-size: 14px">
+            <label style="color: aliceblue">账号类别&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+            <select name="selector" id="selector1" required="required"> 
+                <option value="0">消费者</option> 
+                <option value="1">生产商</option> 
+                <option value="2">经销商</option>
+                <option value="3">零售商</option>
+            </select></br> 
+        </div>
+        <button class="btn btn-primary btn-large btn-block" id="login1" onclick="App.login()">登录</button>
+        <button class="btn btn-default btn-large btn-block" id="signup1" onclick="window.location.href='signup.html'">注册账号</button>
+        <button class="btn btn-default btn-large btn-block" id="query" onclick="window.open('query.html')">商品查询</button>
+        <div class="alert alert-warning" style="display: none" name="msg1" id="msg11">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            账号不存在
+        </div>
+        <div class="alert alert-warning" style="display: none" name="msg2" id="msg12">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            密码不正确
+        </div>
+    </div>
+    
+
+    <script src="index.js"></script>
+  </body>
+</html>

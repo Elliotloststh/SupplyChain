@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>商品溯源系统</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function altRows(id){
+            if(document.getElementsByTagName){  
+                
+                var table = document.getElementById(id);  
+                var rows = table.getElementsByTagName("tr"); 
+                    
+                for(i = 0; i < rows.length; i++){          
+                    if(i % 2 == 0){
+                        rows[i].className = "evenrowcolor";
+                    }else{
+                        rows[i].className = "oddrowcolor";
+                    }      
+                }
+            }
+        }
+        window.onload=function(){
+            altRows('alternatecolor1');
+            altRows('alternatecolor2');
+            altRows('alternatecolor3');
+            altRows('alternatecolor4');
+        }
+    </script>
+                
+</head>
+<style>
+    table.altrowstable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #a9c6c9;
+        border-collapse: collapse;
+    }
+    table.altrowstable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+    table.altrowstable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+    .oddrowcolor{
+        background-color:#d4e3e5;
+    }
+    .evenrowcolor{
+        background-color:#c3dde0;
+    }
+    #d1
+    {
+        margin-top: 54.5px;
+        margin-right: 60px;
+    }
+    input {
+        display: block;
+        margin-bottom: 12px;
+        opacity: 0.7;
+    }
+    textarea {
+        display: block;
+        margin-bottom: 12px;
+        opacity: 0.85;
+    }
+    body {
+        background-image:url(http://t1.aixinxi.net/o_1d1dfukh71plu2eg1s9e2hbdiua.jpg-w.jpg);
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        background-size:100% 100%;
+    }
+    .horizontal{
+        width: 215px;
+        margin:0 auto;
+        margin-top: 150px;
+        font-size: 20px;
+        text-align:center;
+        display: flex;
+        justify-content:center;
+    }
+</style>
+<body>
+    <div class="horizontal">
+            <div id="d1">
+                <input type="text" id="goodId" placeholder="商品ID" required="required"/>
+                <button class="btn btn-primary btn-large btn-block" id="query" onclick="App.query()">查询商品</button>
+            </div>
+            <div>
+                <label style="width:450px"></label>>
+                <table class="altrowstable" id="alternatecolor1">
+                    <tr>
+                        <th rowspan="2">商品信息</th><th>ID</th><th>名称</th><th>生产时间</th>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td>
+                    </tr>
+                </table>
+                <br>
+                <table class="altrowstable" id="alternatecolor2">
+                    <tr>
+                        <th rowspan="2">生产商</th><th>名称</th><th>信息</th>
+                    </tr>
+                    <tr>
+                        <td></td><td></td>
+                    </tr>
+                </table>
+                <br>
+                <table class="altrowstable" id="alternatecolor3">
+                    <tr>
+                        <th id="ths" rowspan="2">供应记录</th><th>买家类别</th><th>买家</th><th>时间</th><th>价格</th>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td>
+                    </tr>
+                </table>
+                <br>
+                <table class="altrowstable" id="alternatecolor4">
+                    <tr>
+                        <th id="thc" rowspan="2">组件</th><th>编号</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>        
+            </div>
+    </div>
+    <!-- <script>
+        
+        let tb4 = document.getElementById("alternatecolor4");
+        let newrow = tb4.insertRow(2);
+        document.getElementById("thc").rowSpan="3";
+        newrow.innerHTML='<td></td>';
+    </script> -->
+        
+    
+    <script src="index.js"></script>
+  </body>
+</html>
